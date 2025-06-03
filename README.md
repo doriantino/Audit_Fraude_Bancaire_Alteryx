@@ -21,7 +21,7 @@ Mon workflow s'est articulé autour des phases suivantes :
 1.  **Préparation et Qualité des Données :**
     * Nettoyage et conversion des types de données (passer de `V_String` à `Double` pour les montants et soldes).
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
-    * *Voir [workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd) pour le workflow Alteryx et les images pour des détails d'étapes :*
+    * *Voir [Workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd) pour le workflow Alteryx et les images pour des détails d'étapes :*
         * ![Vue d'ensemble du workflow Alteryx](Images/workflow_overview.png)
         * ![Étape de nettoyage des données](Images/Clean_UP_des_donnees.png)
         * ![Analyse des soldes](Images/Analyse_des_soldes.png)
