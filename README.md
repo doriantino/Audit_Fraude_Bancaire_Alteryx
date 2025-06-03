@@ -19,7 +19,7 @@ Mon workflow s'est articulé autour des phases suivantes :
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
     * *Voir [workflows/Audit_Fraude_Bancaire_Workflow.yxmd](Workflows/WORKFLOW.yxmd) et les images :*
         * ![Vue d'ensemble du workflow Alteryx](Images/WORKFLOW.PNG)
-        * ![Configuration de l'outil Formula pour les différences de solde](images/Analyse des soldes.PNG)
+        * ![Configuration de l'outil Formula pour les différences de solde](Images/Analyse des soldes.PNG)
 
 2.  **Évaluation de la Performance du Système Anti-Fraude (`isFlaggedFraud` vs `isFraud`) :**
     * Construction d'une **matrice de confusion** pour quantifier :
@@ -28,7 +28,7 @@ Mon workflow s'est articulé autour des phases suivantes :
         * Faux Positifs (FP)
         * Vrais Négatifs (VN)
     * *Voir l'étape de la matrice de confusion dans le workflow :*
-        * ![Section du workflow pour la matrice de confusion](images/fraud_detection_matrix_flow.png)
+        * ![Section du workflow pour la matrice de confusion](Images/WORKFLOW.PNG)
 
 3.  **Analyse des Causes Racines et des Caractéristiques des Fraudes Manquées :**
     * Corrélation des Faux Négatifs avec les incohérences de solde.
