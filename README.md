@@ -1,14 +1,14 @@
 # Audit IT : Évaluation d'un Système de Détection de Fraude Bancaire avec Alteryx
 
-##  Introduction
+## 🚀 Introduction
 
 Ce projet documente un audit IT approfondi que j'ai mené pour évaluer l'efficacité d'un système de détection de fraude au sein d'une institution financière (basé sur le dataset `Paysim1`). Mon objectif était de quantifier les lacunes de détection, d'identifier les causes racines et de proposer des recommandations concrètes pour renforcer la sécurité.
 
-##  Contexte et Enjeu
+## 🎯 Contexte et Enjeu
 
 La fraude bancaire représente un risque financier et de réputation majeur. Un système de détection inefficace peut entraîner des pertes colossales. Cet audit a été conçu pour apporter des preuves tangibles de la performance du système anti-fraude en place et éclairer les décisions stratégiques.
 
-##  Méthodologie et Outils
+## 🛠️ Méthodologie et Outils
 
 J'ai adopté une approche **data-driven** et **quantitative**, exploitant la puissance d'**Alteryx** pour toutes les étapes de l'analyse.
 
@@ -21,10 +21,28 @@ Mon workflow s'est articulé autour des phases suivantes :
 1.  **Préparation et Qualité des Données :**
     * Nettoyage et conversion des types de données (passer de `V_String` à `Double` pour les montants et soldes).
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
-    * *Voir [Workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd) pour le workflow Alteryx et les images pour des détails d'étapes :*
-        * ![Vue d'ensemble du workflow Alteryx](Images/WORKFLOW.PNG)
-        * ![Étape de nettoyage des données](Images/Clean%20UP%20des%20données.PNG)
-        * ![Analyse des soldes](Images/Analyse%20des%20soldes.PNG)
+    * *Note sur le calcul des soldes : Lors de cette étape, des défis liés aux variables ont été rencontrés et ont nécessité une analyse approfondie des formules.*
+    * *Accéder au workflow Alteryx principal ici :* [Workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd)
+
+    ### Visualisation du Workflow Alteryx et des Étapes Clés
+
+    Pour mieux comprendre l'approche et les étapes du processus d'audit, voici des captures d'écran des parties pertinentes du workflow Alteryx :
+
+    #### Vue d'ensemble du workflow
+    ![Vue d'ensemble du workflow Alteryx](Images/WORKFLOW.PNG)
+
+    #### Détails des étapes de préparation des données
+
+    **Étape de nettoyage des données :**
+    ![Étape de nettoyage des données](Images/Clean%20UP%20des%20données.PNG)
+
+    **Analyse des soldes :**
+    ![Analyse des soldes](Images/Analyse%20des%20soldes.PNG)
+
+    #### Logique de la matrice de confusion
+    **Schéma du workflow pour la matrice de confusion :**
+    ![Schéma du workflow pour la matrice de confusion](Images/Matrice%20de%20confusion.PNG)
+
 
 2.  **Évaluation de la Performance du Système Anti-Fraude (`isFlaggedFraud` vs `isFraud`) :**
     * Construction d'une **matrice de confusion** pour quantifier :
@@ -32,27 +50,28 @@ Mon workflow s'est articulé autour des phases suivantes :
         * Faux Négatifs (FN)
         * Faux Positifs (FP)
         * Vrais Négatifs (VN)
-    * *Voir la section pertinente du workflow pour la logique :*
-        * ![Section du workflow pour la matrice de confusion](Images/Matrice%20de%20confusion.png)
 
 3.  **Analyse des Causes Racines et des Caractéristiques des Fraudes Manquées :**
-    * Corrélation des Faux Négatifs avec les incohérences de solde (`FN WITH NO SOLD MATTER` et `FN WITH SOLD MATTER`).
-    * Analyse de la répartition des Faux Négatifs par type de transaction (`FN BY TYPES`).
+    * Corrélation des Faux Négatifs avec les incohérences de solde.
+    * Analyse de la répartition des Faux Négatifs par type de transaction.
 
-##  Résultats Clés & Découvertes d'Audit
+## 📊 Résultats Clés & Découvertes d'Audit
 
 Les conclusions de cet audit sont significatives :
 
 * **Intégrité des Données Compromise :**
     * Plus de **85%** des transactions présentaient des incohérences majeures dans les soldes émetteurs, et **75.5%** pour les destinataires. Ces écarts pouvaient atteindre des dizaines de millions d'euros, signalant des failles critiques dans la tenue de compte.
+
 * **Système de Détection de Fraude Excessivement Inefficace :**
     * **Vrais Positifs (VP) : 16**
     * **Faux Négatifs (FN) : 8 197**
     * **Faux Positifs (FP) : 0**
     * **Vrais Négatifs (VN) : 6 354 407**
     * Le système ne détecte que **0.19%** des fraudes réelles, laissant passer la quasi-totalité des menaces.
+
 * **Impact Financier Colossal des Fraudes Manquées :**
     * Les **8 197** fraudes non détectées représentent un montant cumulé stupéfiant de **11 978 629 864,15 €** (environ 12 milliards d'euros).
+
 * **Pistes d'Amélioration Concrètes :**
     * **5 323** des fraudes manquées (soit ~65%) présentaient des **incohérences de solde**, une anomalie non exploitée par le système actuel.
     * Les fraudes non détectées sont presque exclusivement de type **TRANSFER (4081)** et **CASH_OUT (4116)**.
@@ -66,7 +85,7 @@ Les conclusions de cet audit sont significatives :
 * [OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.yxdb](OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.yxdb)
 * [OUTPUT/FN%20WITH%20SOLD%20MATTER.yxdb](OUTPUT/FN%20WITH%20SOLD%20MATTER.yxdb)
 
-##  Recommandations Stratégiques
+## 💡 Recommandations Stratégiques
 
 Basé sur ces constats, des actions urgentes sont nécessaires pour renforcer la posture de sécurité de la banque :
 
@@ -75,7 +94,7 @@ Basé sur ces constats, des actions urgentes sont nécessaires pour renforcer la
 3.  **Audit et Renforcement des Processus de Tenue de Compte :** Corriger les causes racines des incohérences de données pour garantir la fiabilité des informations financières.
 4.  **Mise en Place d'un Suivi Continu :** Développer des tableaux de bord pour surveiller en temps réel les performances du système anti-fraude.
 
-##  Compétences Démontrées
+## 📈 Compétences Démontrées
 
 Ce projet m'a permis de solidifier et de mettre en pratique des compétences clés en :
 
@@ -87,6 +106,6 @@ Ce projet m'a permis de solidifier et de mettre en pratique des compétences cl�
 * **Détection de Fraude & Cybersécurité**
 * **Formulation de Recommandations Stratégiques basées sur la Data**
 
-## ✉ dikoume383@gmail.com
+## ✉️ Contact
 
 N'hésitez pas à me contacter si vous souhaitez échanger sur ce projet ou d'autres sujets liés à l'audit, l'analyse de données et la cybersécurité.
