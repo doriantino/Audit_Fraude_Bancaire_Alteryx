@@ -4,22 +4,27 @@
 
 Ce projet documente un audit IT approfondi que j'ai mené pour évaluer l'efficacité d'un système de détection de fraude au sein d'une institution financière (basé sur le dataset `Paysim1`). Mon objectif était de quantifier les lacunes de détection, d'identifier les causes racines et de proposer des recommandations concrètes pour renforcer la sécurité.
 
-##  Contexte et Enjeu
+## 🎯 Contexte et Enjeu
 
-La fraude bancaire représente un risque financier et de réputation majeur. Un système de détection inefficace peut entraîner des pertes colossales. Cet audit a été conçu pour apporter des preuves tangibles de la performance du système actuel et éclairer les décisions stratégiques.
+La fraude bancaire représente un risque financier et de réputation majeur. Un système de détection inefficace peut entraîner des pertes colossales. Cet audit a été conçu pour apporter des preuves tangibles de la performance du système anti-fraude en place et éclairer les décisions stratégiques.
 
-##  Méthodologie et Outils
+## 🛠️ Méthodologie et Outils
 
 J'ai adopté une approche **data-driven** et **quantitative**, exploitant la puissance d'**Alteryx** pour toutes les étapes de l'analyse.
+
+**Source des Données :**
+Le dataset utilisé pour cette analyse est une simulation de transactions financières appelée **PaySim1**, disponible publiquement sur Kaggle.
+* **Lien du dataset :** [https://www.kaggle.com/datasets/ealaxi/paysim15](https://www.kaggle.com/datasets/ealaxi/paysim15)
 
 Mon workflow s'est articulé autour des phases suivantes :
 
 1.  **Préparation et Qualité des Données :**
     * Nettoyage et conversion des types de données (passer de `V_String` à `Double` pour les montants et soldes).
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
-    * *Voir [workflows/Audit_Fraude_Bancaire_Workflow.yxmd](Workflows/WORKFLOW.yxmd) et les images :*
-        * ![Vue d'ensemble du workflow Alteryx](Images/WORKFLOW.PNG)
-        * ![Configuration de l'outil Formula pour les différences de solde](Images/Analyse des soldes.PNG)
+    * *Voir [workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd) pour le workflow Alteryx et les images pour des détails d'étapes :*
+        * ![Vue d'ensemble du workflow Alteryx](Images/workflow_overview.png)
+        * ![Étape de nettoyage des données](Images/Clean_UP_des_donnees.png)
+        * ![Analyse des soldes](Images/Analyse_des_soldes.png)
 
 2.  **Évaluation de la Performance du Système Anti-Fraude (`isFlaggedFraud` vs `isFraud`) :**
     * Construction d'une **matrice de confusion** pour quantifier :
@@ -27,14 +32,14 @@ Mon workflow s'est articulé autour des phases suivantes :
         * Faux Négatifs (FN)
         * Faux Positifs (FP)
         * Vrais Négatifs (VN)
-    * *Voir l'étape de la matrice de confusion dans le workflow :*
-        * ![Section du workflow pour la matrice de confusion](Images/WORKFLOW.PNG)
+    * *Voir la section pertinente du workflow pour la logique :*
+        * ![Section du workflow pour la matrice de confusion](Images/image_49d290.png)
 
 3.  **Analyse des Causes Racines et des Caractéristiques des Fraudes Manquées :**
-    * Corrélation des Faux Négatifs avec les incohérences de solde.
-    * Analyse de la répartition des Faux Négatifs par type de transaction (`TRANSFER`, `CASH_OUT`, etc.).
+    * Corrélation des Faux Négatifs avec les incohérences de solde (`FN WITH NO SOLD MATTER` et `FN WITH SOLD MATTER`).
+    * Analyse de la répartition des Faux Négatifs par type de transaction (`FN BY TYPES`).
 
-## Résultats Clés & Découvertes d'Audit
+## 📊 Résultats Clés & Découvertes d'Audit
 
 Les conclusions de cet audit sont significatives :
 
@@ -55,9 +60,16 @@ Les conclusions de cet audit sont significatives :
     * **5 323** des fraudes manquées (soit ~65%) présentaient des **incohérences de solde**, une anomalie non exploitée par le système actuel.
     * Les fraudes non détectées sont presque exclusivement de type **TRANSFER (4081)** et **CASH_OUT (4116)**.
 
-*Vous pouvez trouver un résumé de ces indicateurs dans [results/Synthese_Indicateurs_Audit.xlsx](results/Synthese_Indicateurs_Audit.xlsx).*
+*Pour consulter les détails de chaque indicateur, veuillez télécharger les fichiers `.YXDB` depuis le dossier `OUTPUT/` de ce dépôt :*
+* [OUTPUT/TOTAL VP.YXDB](OUTPUT/TOTAL%20VP.YXDB)
+* [OUTPUT/TOTAL FN.YXDB](OUTPUT/TOTAL%20FN.YXDB)
+* [OUTPUT/TOTAL FP.YXDB](OUTPUT/TOTAL%20FP.YXDB)
+* [OUTPUT/TOTAL VN.YXDB](OUTPUT/TOTAL%20VN.YXDB)
+* [OUTPUT/FN WITH NO SOLD MATTER.YXDB](OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.YXDB)
+* [OUTPUT/FN WITH SOLD MATTER.YXDB](OUTPUT/FN%20WITH%20SOLD%20MATTER.YXDB)
+* [OUTPUT/FN BY TYPES.YXDB](OUTPUT/FN%20BY%20TYPES.YXDB)
 
-##  Recommandations Stratégiques
+## 💡 Recommandations Stratégiques
 
 Basé sur ces constats, des actions urgentes sont nécessaires pour renforcer la posture de sécurité de la banque :
 
@@ -66,7 +78,7 @@ Basé sur ces constats, des actions urgentes sont nécessaires pour renforcer la
 3.  **Audit et Renforcement des Processus de Tenue de Compte :** Corriger les causes racines des incohérences de données pour garantir la fiabilité des informations financières.
 4.  **Mise en Place d'un Suivi Continu :** Développer des tableaux de bord pour surveiller en temps réel les performances du système anti-fraude.
 
-##  Compétences Démontrées
+## 📈 Compétences Démontrées
 
 Ce projet m'a permis de solidifier et de mettre en pratique des compétences clés en :
 
@@ -74,6 +86,10 @@ Ce projet m'a permis de solidifier et de mettre en pratique des compétences cl�
 * **Analyse Exploratoire des Données (EDA)**
 * **Qualité des Données et Data Wrangling**
 * **Ingénierie des Données avec Alteryx**
-* **Mesure de Performance & Quantificaton des Risques Financiers**
+* **Mesure de Performance & Quantification des Risques Financiers**
 * **Détection de Fraude & Cybersécurité**
 * **Formulation de Recommandations Stratégiques basées sur la Data**
+
+## ✉️ dikoume383@gmail.com
+
+N'hésitez pas à me contacter si vous souhaitez échanger sur ce projet ou d'autres sujets liés à l'audit, l'analyse de données et la cybersécurité.
