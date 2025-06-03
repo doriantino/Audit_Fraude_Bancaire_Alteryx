@@ -23,7 +23,7 @@ Mon workflow s'est articulé autour des phases suivantes :
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
     * *Voir [Workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd) pour le workflow Alteryx et les images pour des détails d'étapes :*
         * ![Vue d'ensemble du workflow Alteryx](Images/WORKFLOW.PNG)
-        * ![Étape de nettoyage des données](Images/Clean%20UP%20des%20donnees.PNG)
+        * ![Étape de nettoyage des données](Images/Clean%20UP%20des%20données.PNG)
         * ![Analyse des soldes](Images/Analyse%20des%20soldes.PNG)
 
 2.  **Évaluation de la Performance du Système Anti-Fraude (`isFlaggedFraud` vs `isFraud`) :**
