@@ -33,7 +33,7 @@ Mon workflow s'est articulé autour des phases suivantes :
         * Faux Positifs (FP)
         * Vrais Négatifs (VN)
     * *Voir la section pertinente du workflow pour la logique :*
-        * ![Section du workflow pour la matrice de confusion](Images/Matrice de confusion.png)
+        * ![Section du workflow pour la matrice de confusion](Images/Matrice%20de%20confusion.png)
 
 3.  **Analyse des Causes Racines et des Caractéristiques des Fraudes Manquées :**
     * Corrélation des Faux Négatifs avec les incohérences de solde (`FN WITH NO SOLD MATTER` et `FN WITH SOLD MATTER`).
