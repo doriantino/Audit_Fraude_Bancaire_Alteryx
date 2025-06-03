@@ -1,14 +1,14 @@
 # Audit IT : Évaluation d'un Système de Détection de Fraude Bancaire avec Alteryx
 
-## 🚀 Introduction
+##  Introduction
 
 Ce projet documente un audit IT approfondi que j'ai mené pour évaluer l'efficacité d'un système de détection de fraude au sein d'une institution financière (basé sur le dataset `Paysim1`). Mon objectif était de quantifier les lacunes de détection, d'identifier les causes racines et de proposer des recommandations concrètes pour renforcer la sécurité.
 
-## 🎯 Contexte et Enjeu
+##  Contexte et Enjeu
 
 La fraude bancaire représente un risque financier et de réputation majeur. Un système de détection inefficace peut entraîner des pertes colossales. Cet audit a été conçu pour apporter des preuves tangibles de la performance du système anti-fraude en place et éclairer les décisions stratégiques.
 
-## 🛠️ Méthodologie et Outils
+##  Méthodologie et Outils
 
 J'ai adopté une approche **data-driven** et **quantitative**, exploitant la puissance d'**Alteryx** pour toutes les étapes de l'analyse.
 
@@ -39,7 +39,7 @@ Mon workflow s'est articulé autour des phases suivantes :
     * Corrélation des Faux Négatifs avec les incohérences de solde (`FN WITH NO SOLD MATTER` et `FN WITH SOLD MATTER`).
     * Analyse de la répartition des Faux Négatifs par type de transaction (`FN BY TYPES`).
 
-## 📊 Résultats Clés & Découvertes d'Audit
+##  Résultats Clés & Découvertes d'Audit
 
 Les conclusions de cet audit sont significatives :
 
@@ -66,7 +66,7 @@ Les conclusions de cet audit sont significatives :
 * [OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.yxdb](OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.yxdb)
 * [OUTPUT/FN%20WITH%20SOLD%20MATTER.yxdb](OUTPUT/FN%20WITH%20SOLD%20MATTER.yxdb)
 
-## 💡 Recommandations Stratégiques
+##  Recommandations Stratégiques
 
 Basé sur ces constats, des actions urgentes sont nécessaires pour renforcer la posture de sécurité de la banque :
 
@@ -75,7 +75,7 @@ Basé sur ces constats, des actions urgentes sont nécessaires pour renforcer la
 3.  **Audit et Renforcement des Processus de Tenue de Compte :** Corriger les causes racines des incohérences de données pour garantir la fiabilité des informations financières.
 4.  **Mise en Place d'un Suivi Continu :** Développer des tableaux de bord pour surveiller en temps réel les performances du système anti-fraude.
 
-## 📈 Compétences Démontrées
+##  Compétences Démontrées
 
 Ce projet m'a permis de solidifier et de mettre en pratique des compétences clés en :
 
@@ -87,6 +87,6 @@ Ce projet m'a permis de solidifier et de mettre en pratique des compétences cl�
 * **Détection de Fraude & Cybersécurité**
 * **Formulation de Recommandations Stratégiques basées sur la Data**
 
-## ✉️ Contact
+## ✉ dikoume383@gmail.com
 
 N'hésitez pas à me contacter si vous souhaitez échanger sur ce projet ou d'autres sujets liés à l'audit, l'analyse de données et la cybersécurité.
