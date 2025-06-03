@@ -23,8 +23,8 @@ Mon workflow s'est articulé autour des phases suivantes :
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
     * *Voir [Workflows/WORKFLOW.yxmd](Workflows/WORKFLOW.yxmd) pour le workflow Alteryx et les images pour des détails d'étapes :*
         * ![Vue d'ensemble du workflow Alteryx](Images/WORKFLOW.PNG)
-        * ![Étape de nettoyage des données](Images/Clean_UP_des_données.PNG)
-        * ![Analyse des soldes](Images/Analyse_des_soldes.PNG)
+        * ![Étape de nettoyage des données](Images/Clean%20UP%20des%20donnees.PNG)
+        * ![Analyse des soldes](Images/Analyse%20des%20soldes.PNG)
 
 2.  **Évaluation de la Performance du Système Anti-Fraude (`isFlaggedFraud` vs `isFraud`) :**
     * Construction d'une **matrice de confusion** pour quantifier :
@@ -33,7 +33,7 @@ Mon workflow s'est articulé autour des phases suivantes :
         * Faux Positifs (FP)
         * Vrais Négatifs (VN)
     * *Voir la section pertinente du workflow pour la logique :*
-        * ![Section du workflow pour la matrice de confusion](Images/image_49d290.png)
+        * ![Section du workflow pour la matrice de confusion](images/image_49d290.png)
 
 3.  **Analyse des Causes Racines et des Caractéristiques des Fraudes Manquées :**
     * Corrélation des Faux Négatifs avec les incohérences de solde (`FN WITH NO SOLD MATTER` et `FN WITH SOLD MATTER`).
@@ -45,29 +45,26 @@ Les conclusions de cet audit sont significatives :
 
 * **Intégrité des Données Compromise :**
     * Plus de **85%** des transactions présentaient des incohérences majeures dans les soldes émetteurs, et **75.5%** pour les destinataires. Ces écarts pouvaient atteindre des dizaines de millions d'euros, signalant des failles critiques dans la tenue de compte.
-
 * **Système de Détection de Fraude Excessivement Inefficace :**
     * **Vrais Positifs (VP) : 16**
     * **Faux Négatifs (FN) : 8 197**
     * **Faux Positifs (FP) : 0**
     * **Vrais Négatifs (VN) : 6 354 407**
     * Le système ne détecte que **0.19%** des fraudes réelles, laissant passer la quasi-totalité des menaces.
-
 * **Impact Financier Colossal des Fraudes Manquées :**
     * Les **8 197** fraudes non détectées représentent un montant cumulé stupéfiant de **11 978 629 864,15 €** (environ 12 milliards d'euros).
-
 * **Pistes d'Amélioration Concrètes :**
     * **5 323** des fraudes manquées (soit ~65%) présentaient des **incohérences de solde**, une anomalie non exploitée par le système actuel.
     * Les fraudes non détectées sont presque exclusivement de type **TRANSFER (4081)** et **CASH_OUT (4116)**.
 
 *Pour consulter les détails de chaque indicateur, veuillez télécharger les fichiers `.YXDB` depuis le dossier `OUTPUT/` de ce dépôt :*
-* [OUTPUT/TOTAL VP.YXDB](OUTPUT/TOTAL VP.YXDB)
-* [OUTPUT/TOTAL FN.YXDB](OUTPUT/TOTAL FN.YXDB)
-* [OUTPUT/TOTAL FP.YXDB](OUTPUT/TOTAL FP.YXDB)
-* [OUTPUT/TOTAL VN.YXDB](OUTPUT/TOTAL VN.YXDB)
-* [OUTPUT/FN WITH NO SOLD MATTER.YXDB](OUTPUT/FN WITH NO SOLD MATTER.YXDB)
-* [OUTPUT/FN WITH SOLD MATTER.YXDB](OUTPUT/FN WITH SOLD MATTER.YXDB)
-* [OUTPUT/FN BY TYPES.YXDB](OUTPUT/FN BY TYPES.YXDB)
+* [OUTPUT/TOTAL%20VP.yxdb](OUTPUT/TOTAL%20VP.yxdb)
+* [OUTPUT/TOTAL%20FN.yxdb](OUTPUT/TOTAL%20FN.yxdb)
+* [OUTPUT/TOTAL%20FP.yxdb](OUTPUT/TOTAL%20FP.yxdb)
+* [OUTPUT/TOTAL%20VN.yxdb](OUTPUT/TOTAL%20VN.yxdb)
+* [OUTPUT/FN%20BY%20TYPES.yxdb](OUTPUT/FN%20BY%20TYPES.yxdb)
+* [OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.yxdb](OUTPUT/FN%20WITH%20NO%20SOLD%20MATTER.yxdb)
+* [OUTPUT/FN%20WITH%20SOLD%20MATTER.yxdb](OUTPUT/FN%20WITH%20SOLD%20MATTER.yxdb)
 
 ## 💡 Recommandations Stratégiques
 
@@ -90,6 +87,6 @@ Ce projet m'a permis de solidifier et de mettre en pratique des compétences cl�
 * **Détection de Fraude & Cybersécurité**
 * **Formulation de Recommandations Stratégiques basées sur la Data**
 
-## ✉️ dikoume383@gmail.com
+## ✉️ Contact
 
 N'hésitez pas à me contacter si vous souhaitez échanger sur ce projet ou d'autres sujets liés à l'audit, l'analyse de données et la cybersécurité.
