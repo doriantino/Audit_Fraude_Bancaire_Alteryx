@@ -106,6 +106,6 @@ Ce projet m'a permis de solidifier et de mettre en pratique des compétences cl�
 * **Détection de Fraude & Cybersécurité**
 * **Formulation de Recommandations Stratégiques basées sur la Data**
 
-## ✉️ Contact
+## ✉️ dikoume383@gmail.com
 
 N'hésitez pas à me contacter si vous souhaitez échanger sur ce projet ou d'autres sujets liés à l'audit, l'analyse de données et la cybersécurité.
