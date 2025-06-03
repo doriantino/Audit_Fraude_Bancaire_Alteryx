@@ -17,9 +17,9 @@ Mon workflow s'est articulé autour des phases suivantes :
 1.  **Préparation et Qualité des Données :**
     * Nettoyage et conversion des types de données (passer de `V_String` à `Double` pour les montants et soldes).
     * Calcul d'indicateurs de cohérence interne : `Balance_Diff_Org` et `Balance_Diff_Dest` (différences entre les soldes attendus et réels).
-    * *Voir [workflows/Audit_Fraude_Bancaire_Workflow.yxmd](workflows/Audit_Fraude_Bancaire_Workflow.yxmd) et les images :*
-        * ![Vue d'ensemble du workflow Alteryx](images/workflow_overview.png)
-        * ![Configuration de l'outil Formula pour les différences de solde](images/formula_balance_diff.png)
+    * *Voir [workflows/Audit_Fraude_Bancaire_Workflow.yxmd](workflows/WORKFLOW.yxmd) et les images :*
+        * ![Vue d'ensemble du workflow Alteryx](images/WORKFLOW.PNG)
+        * ![Configuration de l'outil Formula pour les différences de solde](images/Analyse des soldes.PNG)
 
 2.  **Évaluation de la Performance du Système Anti-Fraude (`isFlaggedFraud` vs `isFraud`) :**
     * Construction d'une **matrice de confusion** pour quantifier :
